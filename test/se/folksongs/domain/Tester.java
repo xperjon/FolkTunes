@@ -1,3 +1,5 @@
+package se.folksongs.domain;
+
 
 import org.junit.AfterClass;
 import org.junit.Test;
