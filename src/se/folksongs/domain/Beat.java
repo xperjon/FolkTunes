@@ -1,9 +1,13 @@
 package se.folksongs.domain;
 
 /**
- * Created 2011-nov-16
+ *
  * @author jep
  */
-public class Beat {
+public enum Beat {
     
+    ONE_FOURTH,
+    TWO_FOURTH,
+    THRE_FOURTH,
+    FOUR_FOURTH
 }

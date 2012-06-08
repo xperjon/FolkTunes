@@ -6,12 +6,13 @@ package se.folksongs.domain;
  */
 public class Tune {
 
-    private String title;
+    private String name;
     private Type type;
     private Region region;
     private Beat beat;
     private FolkMusician composer;
     private FolkMusician learnedFrom;
+    private District disctrict;
 
     public FolkMusician getLearnedFrom() {
         return learnedFrom;
@@ -20,7 +21,6 @@ public class Tune {
     public void setLearnedFrom(FolkMusician learnedFrom) {
         this.learnedFrom = learnedFrom;
     }
-    private District disctrict;
 
     public FolkMusician getComposer() {
         return composer;
@@ -54,12 +54,12 @@ public class Tune {
         this.region = region;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Type getType() {
@@ -69,5 +69,4 @@ public class Tune {
     public void setType(Type type) {
         this.type = type;
     }
-    
 }
