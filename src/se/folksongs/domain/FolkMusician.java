@@ -8,6 +8,19 @@ public class FolkMusician {
     
     private String name;
 
+    public FolkMusician(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
     @Override
     public boolean equals(Object obj) {
         if (obj == null) {

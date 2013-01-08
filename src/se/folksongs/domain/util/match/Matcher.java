@@ -7,18 +7,42 @@ import se.folksongs.domain.Tune;
  *
  * @author jep
  */
-public class TuneMatcher {
+public class Matcher {
 
-    public static final int MAX_SCORE = 5;
+    public Matcher() {
+    }
 
-    public TuneMatcher() {
+    public MatchResult match(Tune t1, Tune t2) {
+        int points = 0;
+        if (matchByName(t1, t2)) {
+            points++;
+        }
+        if (matchByBeat(t1, t2)) {
+            points++;
+        }
+        if (matchByComposer(t1, t2)) {
+            points++;
+        }
+        if (matchByDistrict(t1, t2)) {
+            points++;
+        }
+        if (matchByRegion(t1, t2)) {
+            points++;
+        }
+        if (matchByType(t1, t2)) {
+            points++;
+        }
+        if (matchByLearnedFrom(t1, t2)) {
+            points++;
+        }
+        return new MatchResult(points, t1, t2);
     }
 
     public boolean matchByRegion(Tune s1, Tune s2) {
         if (s1.getRegion() == null || s2.getRegion() == null) {
             return false;
         }
-        if (s1.getRegion().equals(s1.getRegion())) {
+        if (s1.getRegion().equals(s2.getRegion())) {
             return true;
         }
         return false;
@@ -74,37 +98,8 @@ public class TuneMatcher {
         return false;
     }
 
-    public int match(Tune s1, Tune s2) {
-        int points = 0;
-        if (matchByName(s1, s2)) {
-            points++;
-        }
-        if (matchByBeat(s1, s2)) {
-            points++;
-        }
-        if (matchByComposer(s1, s2)) {
-            points++;
-        }
-        if (matchByDistrict(s1, s2)) {
-            points++;
-        }
-        if (matchByRegion(s1, s2)) {
-            points++;
-        }
-        if (matchByType(s1, s2)) {
-            points++;
-        }
-        if (matchByLearnedFrom(s1, s2)) {
-            points++;
-        }
-        return points;
-    }
-
-    public void process() {
-    }
-
     private boolean matchByName(Tune s1, Tune s2) {
-        if(s1.getName() == null || s2.getName() == null) {
+        if (s1.getName() == null || s2.getName() == null) {
             return false;
         }
         if (s1.getName().equalsIgnoreCase(s2.getName())) {

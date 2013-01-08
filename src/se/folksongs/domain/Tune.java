@@ -14,6 +14,19 @@ public class Tune {
     private FolkMusician learnedFrom;
     private District disctrict;
 
+    public Tune() {
+    }
+    
+    public Tune(String name, Type type, Region region, Beat beat, FolkMusician composer, FolkMusician learnedFrom, District disctrict) {
+        this.name = name;
+        this.type = type;
+        this.region = region;
+        this.beat = beat;
+        this.composer = composer;
+        this.learnedFrom = learnedFrom;
+        this.disctrict = disctrict;
+    }
+    
     public FolkMusician getLearnedFrom() {
         return learnedFrom;
     }
@@ -69,4 +82,10 @@ public class Tune {
     public void setType(Type type) {
         this.type = type;
     }
+
+    @Override
+    public String toString() {
+        return "Tune{" + "name=" + name + '}';
+    }
+
 }

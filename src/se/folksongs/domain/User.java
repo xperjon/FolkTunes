@@ -13,5 +13,18 @@ import java.util.Set;
     
     //TODO
 //    private Location currentLocation;
+
+    public User(String name, Set<Tune> myTunes) {
+        this.name = name;
+        this.myTunes = myTunes;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Set<Tune> getMyTunes() {
+        return myTunes;
+    }
     
 }
